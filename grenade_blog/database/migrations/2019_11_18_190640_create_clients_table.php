@@ -16,13 +16,26 @@ class CreateClientsTable extends Migration
         Schema::create('clients', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->string('prenom');
-            $table->string('adresse');
+            $table->string('firstName');
+            $table->string('address');
             $table->string('email');
-            $table->integer('mdp');
+           // $table->integer('password');
             $table->timestamps();
         });
-    }
+
+
+       // Schema::table('clients', function (Blueprint $table) {
+   // $table->renameColumn('prenom', 'firstName');
+//});
+
+   // Schema::table('clients', function (Blueprint $table) {
+   // $table->renameColumn('adresse', 'address');
+//});
+
+   // Schema::table('clients', function (Blueprint $table) {
+    //$table->renameColumn('mdp', 'password');
+   //});
+}
 
     /**
      * Reverse the migrations.
